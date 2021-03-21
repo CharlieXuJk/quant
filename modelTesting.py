@@ -10,6 +10,21 @@ class SmaCross(bt.Strategy):
     params = dict(period=5  # 移动平均期数
                   )
 
+    def log(self, txt, dt=None):
+        dt = dt or self.datas[0].datatime.date(0)
+        print('%s, %s' % (dt.isoformat(), txt))
+
+    def notify_order(self, order):
+        if order.status in [order.Submitted, order.Accepted]:
+            return
+        if order.status in [order.Completed]:
+            if order.isbuy():
+                self.log('买单执行，%.2f' %order.executed.price)
+            if order.issell():
+                self.log('卖单执行，%.2f' %order.executed.price)
+        elif order.status in [order.Canceled, order.Margin, order.Rejected]:
+            self.log('订单 Canceled/Margin/Rejected')
+
     def __init__(self):
         # 移动平均线指标
         self.move_average = bt.ind.MovingAverageSimple(
