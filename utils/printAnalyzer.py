@@ -40,3 +40,24 @@ def printTradeAnalysis(cerebro, analyzers):
 
         pretty_print(format, 'Longest Winning Streak', streakWonLongest or NA)
         pretty_print(format, 'Longest Losing Streak', streakLostLongest or NA)
+
+        pretty_print(format, 'Net P/L', '${}'.format(round(pnlNetTotal, 2)) if pnlNetTotal else NA)
+        pretty_print(format, 'P/L Average per trade', '${}'.format(round(pnlNetAverage, 2)) if pnlNetAverage else NA)
+        print('\n')
+
+    if hasattr(analyzers, 'drawdown'):
+        pretty_print(format, 'Drawdown', '${}'.format(analyzers.drawdown.get_analysis()['drawdown']))
+    if hasattr(analyzers, 'sharpe'):
+        pretty_print(format, 'Sharpe Ratio:', analyzers.sharpe.get_analysis()['sharperatio'])
+    if hasattr(analyzers, 'vwr'):
+        pretty_print(format, 'VRW', analyzers.vwr.get_analysis()['vwr'])
+    if hasattr(analyzers, 'sqn'):
+        pretty_print(format, 'SQN', analyzers.sqn.get_analysis()['sqn'])
+    print('\n')
+
+    print('Transactions')
+    format = "  {:<24} {:<24} {:<16} {:<8} {:<8} {:<16}"
+    pretty_print(format, 'Date', 'Amount', 'Price', 'SID', 'Symbol', 'Value')
+    for key, value in analyzers.txn.get_analysis().items():
+        pretty_print(format, key.strftime("%Y/%m/%d %H:%M:%S"), value[0][0], value[0][1], value[0][2], value[0][3],
+                     value[0][4])
