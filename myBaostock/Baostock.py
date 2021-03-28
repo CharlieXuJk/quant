@@ -1,5 +1,5 @@
-import Baostock as bs
 import pandas as pd
+import baostock as bs
 
 class BaostockRebuild():
     def __init__(self):
@@ -43,7 +43,7 @@ class BaostockRebuild():
         result = result.apply(pd.to_numeric, axis=0, errors='ignore')
 
         # 删除股票停牌的行记录
-        result = result[result.tradestatus == 1]  # tradestatus 1 正常交易， 0 停牌
+        #result = result[result.tradestatus == 1]  # tradestatus 1 正常交易， 0 停牌
         # 日期列的类型
         result['date'] = pd.to_datetime(result['date'])
         return result

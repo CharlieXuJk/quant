@@ -1,8 +1,6 @@
 from datetime import datetime
 import backtrader as bt
-import os.path  # 管理路径
-import sys  # 发现脚本名字(in argv[0])
-import Baostock as bs
+from baostock import Baostock as bs
 import pandas as pd
 
 # 创建策略类

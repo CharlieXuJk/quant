@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffd2e97e-83bb-41b6-8b5e-2e179f3bb6e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/alarm/README.MD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/Mysql.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/waste/shell.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wechat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mysql.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Baostock.py" beforeDir="false" afterPath="$PROJECT_DIR$/myBaostock/Baostock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baostockData.py" beforeDir="false" afterPath="$PROJECT_DIR$/baostockData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/Mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/Mysql.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/db.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/alarm/mail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shell.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storeData.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tushareTy.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/tushare/tushareTy.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloadData.py" beforeDir="false" afterPath="$PROJECT_DIR$/downloadData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstTy.py" beforeDir="false" afterPath="$PROJECT_DIR$/firstTy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlineFeedBaostock.py" beforeDir="false" afterPath="$PROJECT_DIR$/onlineFeedBaostock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tushare/tushareTy.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/myTushare/tushareTy.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +27,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="b2a3ff7b-d18b-483e-ba13-7226f1a5b62d" />
+  <component name="JupyterTrust" id="f52beb7e-0241-4183-a88e-ff1064f6dcfd">
+    <option name="files">
+      <option value="downloadData.ipynb" />
+    </option>
+  </component>
   <component name="ProjectId" id="1ohssJDLUFLBrk4AhWoWwPypi8G" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -43,7 +44,6 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -51,14 +51,12 @@
       <recent name="D:\Rhomework\untitled" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\quant\quant\waste" />
-      <recent name="C:\quant\quant\tushare" />
-      <recent name="C:\quant\quant\database" />
-      <recent name="C:\quant\quant\alarm" />
+      <recent name="D:\Rhomework\untitled\baostock" />
       <recent name="D:\Rhomework\untitled\alarm" />
+      <recent name="D:\Rhomework\untitled\utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.db">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Mysql" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="untitled" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -66,35 +64,13 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\usr\gtrepublic\Learndjango\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\quant\quant\database\Mysql.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="untitled" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\usr\gtrepublic\Learndjango\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mysql.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -125,6 +101,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="onlineFeedBaostock" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="untitled" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -147,15 +145,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.db" />
-      <item itemvalue="Python.firstTy" />
-      <item itemvalue="Python.Mysql" />
-      <item itemvalue="Python.onlineFeedBaostock" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.db" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.Mysql" />
         <item itemvalue="Python.onlineFeedBaostock" />
         <item itemvalue="Python.firstTy" />
@@ -200,7 +192,6 @@
       <workItem from="1616772129708" duration="4189000" />
       <workItem from="1616808873773" duration="641000" />
       <workItem from="1616810259901" duration="9826000" />
-      <workItem from="1616839051442" duration="14261000" />
     </task>
     <servers />
   </component>
@@ -208,46 +199,33 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616847369289">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="696" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616942745423">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1616847369289" />
-    <state x="351" y="0" key="#db" timestamp="1616847382576">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="351" y="0" key="#db/0.0.1280.680@0.0.1280.680" timestamp="1616847382576" />
-    <state x="385" y="195" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1616854238139">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="385" y="195" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1616854238139" />
+    <state x="696" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1616942745423" />
     <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1616821885811">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1616821885811" />
-    <state width="618" height="163" key="GridCell.Tab.0.bottom" timestamp="1616858855240">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1616946413387">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="618" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1616858855240" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616339650746" />
-    <state width="618" height="163" key="GridCell.Tab.0.center" timestamp="1616858855238">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616946413387" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1616946413387">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="618" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1616858855238" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616339650746" />
-    <state width="618" height="163" key="GridCell.Tab.0.left" timestamp="1616858855235">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616946413387" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1616946413387">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="618" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1616858855235" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616339650746" />
-    <state width="618" height="163" key="GridCell.Tab.0.right" timestamp="1616858855239">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616946413387" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1616946413387">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="618" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1616858855239" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616339650746" />
-    <state x="284" y="0" key="SettingsEditor" timestamp="1616847247587">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616946413387" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1613894881156">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="284" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1616847247587" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1613894881156" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1616821889956">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -257,16 +235,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616810265257" />
-    <state x="415" y="147" width="672" height="444" key="search.everywhere.popup" timestamp="1616857371882">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1615907687542">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="415" y="147" width="672" height="444" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1616857371882" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615907687542" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/untitled$onlineFeedBaostock.coverage" NAME="onlineFeedBaostock Coverage Results" MODIFIED="1616337332113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/quant$db.coverage" NAME="db Coverage Results" MODIFIED="1616847401873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/untitled$firstTy.coverage" NAME="firstTy Coverage Results" MODIFIED="1616336304979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/untitled$Mysql.coverage" NAME="Mysql Coverage Results" MODIFIED="1616812176412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/untitled$main.coverage" NAME="main Coverage Results" MODIFIED="1616946413377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

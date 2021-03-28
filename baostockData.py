@@ -1,4 +1,4 @@
-import Baostock as bs
+from baostock import Baostock as bs
 import pandas as pd
 
 def fetchBaostockOnline(stockCode):

@@ -30,7 +30,7 @@ c = dict(zip(stock_key, stock_index))
 # %%
 
 import pandas as pd
-import Baostock as bs
+from baostock import Baostock as bs
 
 code = list(c.values())[0]
 lg = bs.login()

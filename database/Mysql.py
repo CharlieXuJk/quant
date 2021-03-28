@@ -1,17 +1,18 @@
 import mysql.connector
+import pandas as pd
 
 class MysqlConnector:
     def __init__(self, host, user, passwd, auth_plugin):
         self.__myConnection = mysql.connector.connect(
-            host=self.host,  # 数据库主机地址
-            user=self.user,  # 数据库用户名
-            passwd=self.passwd,  # 数据库密码
-            auth_plugin=self.auth_plugin # 解决MYSQL 8.0默认加密模式不匹配问题
+            host=host,  # 数据库主机地址
+            user=user,  # 数据库用户名
+            passwd=passwd,  # 数据库密码
+            auth_plugin=auth_plugin # 解决MYSQL 8.0默认加密模式不匹配问题
         )
-        self.__myCursor = self.connection.cursor()
+        self.__myCursor = self.__myConnection.cursor()
 
     def __del__(self):
-        __myConnection.close()
+        self.__myConnection.close()
 
     def getCursor(self):
         return self.__myCursor
@@ -21,32 +22,33 @@ class MysqlConnector:
 
     def createTable(self, new_table, db="stock_data_day",):
         #todo:try-except
-        __myCursor.execute('''
-            CREATE TABLE '%s'.'%s' (
-            'date' DATE NOT NULL,
-            'code' VARCHAR(45) NULL,
-            'open' DECIMAL(10,5) NULL,
-            'high' DECIMAL(10,5) NULL,
-            'low' DECIMAL(10,5) NULL,
-            'close' DECIMAL(10,5) NULL,
-            'volume' DECIMAL(25,9) NULL, 
-            'amount' DECIMAL(25,9) NULL,
-            'adjustflag' INT NULL,
-            'turn' DECIMAL(15,10) NULL,
-            'new_tablecol' DECIMAL(15,10) NULL,
-            PRIMARY KEY ('date')); 
-            '''%(db, newtable)
-        )
+        sql = '''
+            CREATE TABLE %s.%s (
+            date DATE NOT NULL,
+            code VARCHAR(45) NULL,
+            open DECIMAL(10,5) NULL,
+            high DECIMAL(10,5) NULL,
+            low DECIMAL(10,5) NULL,
+            close DECIMAL(10,5) NULL,
+            volume DECIMAL(25,9) NULL, 
+            amount DECIMAL(25,9) NULL,
+            adjustflag INT NULL,
+            turn DECIMAL(15,10) NULL,
+            new_tablecol DECIMAL(15,10) NULL,
+            PRIMARY KEY (date)) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+            '''%(db, new_table)
+        print(sql)
+        self.__myCursor.execute(sql)
 
     def uploadData(self, dic, table, db="stock_data_day"):
-        __myCursor.execute("USE %s;"%db)
+        self.__myCursor.execute("USE %s;"%db)
         for value in dic.values:
             myCursor.execute("INSERT INTO %s "
                              "VALUES ('%s', '%s',%s,%s,%s,%s,%s,%s,%s,%s,%s)" % (
                              table, value[0], value[1], value[2], value[3], value[4], value[5], value[6], value[7],
                              value[8], value[9]
                              , value[10]))
-            __connection.commit()
+            self.__connection.commit()
 
     def downloadData(self, db):
         cursor = db.cursor()  # 使用cursor()方法获取用于执行SQL语句的游标
@@ -73,10 +75,10 @@ class MysqlConnector:
         print("cursor.description中的内容：", columnDes)
         return df
 
-
-sql = "SELECT * FROM score" # SQL语句
-dff=get_df_from_db(sql)
-dff
+#
+# sql = "SELECT * FROM score" # SQL语句
+# dff=get_df_from_db(sql)
+# dff
 if __name__ == "__main__":
     pyMysql = MysqlConnector(host="1.15.90.134", user="gtrepublic", passwd="123", auth_plugin="mysql_native_password")
     myCursor = pyMysql.createCursor()
