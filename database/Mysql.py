@@ -43,12 +43,12 @@ class MysqlConnector:
     def uploadData(self, dic, table, db="stock_data_day"):
         self.__myCursor.execute("USE %s;"%db)
         for value in dic.values:
-            myCursor.execute("INSERT INTO %s "
+            self.__myCursor.execute("INSERT INTO %s "
                              "VALUES ('%s', '%s',%s,%s,%s,%s,%s,%s,%s,%s,%s)" % (
                              table, value[0], value[1], value[2], value[3], value[4], value[5], value[6], value[7],
                              value[8], value[9]
                              , value[10]))
-            self.__connection.commit()
+            self.__myConnection.commit()
 
     def downloadData(self, db):
         cursor = db.cursor()  # 使用cursor()方法获取用于执行SQL语句的游标
