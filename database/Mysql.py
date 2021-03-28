@@ -1,5 +1,6 @@
 import mysql.connector
 import pandas as pd
+from database.sql import *
 
 class MysqlConnector:
     def __init__(self, host, user, passwd, auth_plugin):
@@ -22,57 +23,28 @@ class MysqlConnector:
 
     def createTable(self, new_table, db="stock_data_day",):
         #todo:try-except
-        sql = '''
-            CREATE TABLE %s.%s (
-            date DATE NOT NULL,
-            code VARCHAR(45) NULL,
-            open DECIMAL(10,5) NULL,
-            high DECIMAL(10,5) NULL,
-            low DECIMAL(10,5) NULL,
-            close DECIMAL(10,5) NULL,
-            volume DECIMAL(25,9) NULL, 
-            amount DECIMAL(25,9) NULL,
-            adjustflag INT NULL,
-            turn DECIMAL(15,10) NULL,
-            new_tablecol DECIMAL(15,10) NULL,
-            PRIMARY KEY (date)) ENGINE = InnoDB DEFAULT CHARSET=utf8;
-            '''%(db, new_table)
-        print(sql)
-        self.__myCursor.execute(sql)
+        self.__myCursor.execute(create_sql(new_table, db))
 
     def uploadData(self, dic, table, db="stock_data_day"):
         self.__myCursor.execute("USE %s;"%db)
         for value in dic.values:
-            self.__myCursor.execute("INSERT INTO %s "
-                             "VALUES ('%s', '%s',%s,%s,%s,%s,%s,%s,%s,%s,%s)" % (
-                             table, value[0], value[1], value[2], value[3], value[4], value[5], value[6], value[7],
-                             value[8], value[9]
-                             , value[10]))
+            self.__myCursor.execute(upload_sql(table, value))
             self.__myConnection.commit()
 
-    def downloadData(self, db):
-        cursor = db.cursor()  # 使用cursor()方法获取用于执行SQL语句的游标
-        cursor.execute(sql)  # 执行SQL语句
+    def downloadData(self, table, db="stock_data_day"):
+        self.__myCursor.execute("USE %s;"%db)
+        self.__myCursor.execute(download_sql(table))  # 执行SQL语句
         """
         使用fetchall函数以元组形式返回所有查询结果并打印出来
         fetchone()返回第一行，fetchmany(n)返回前n行
         游标执行一次后则定位在当前操作行，下一次操作从当前操作行开始
         """
-        data = cursor.fetchall()
+        data = self.__myCursor.fetchall()
 
         # 下面为将获取的数据转化为dataframe格式
-        columnDes = cursor.description  # 获取连接对象的描述信息
+        columnDes = self.__myCursor.description  # 获取连接对象的描述信息
         columnNames = [columnDes[i][0] for i in range(len(columnDes))]  # 获取列名
         df = pd.DataFrame([list(i) for i in data], columns=columnNames)  # 得到的data为二维元组，逐行取出，转化为列表，再转化为df
-
-        """
-        使用完成之后需关闭游标和数据库连接，减少资源占用,cursor.close(),db.close()
-        db.commit()若对数据库进行了修改，需进行提交之后再关闭
-        """
-        cursor.close()
-        db.close()
-
-        print("cursor.description中的内容：", columnDes)
         return df
 
 #
