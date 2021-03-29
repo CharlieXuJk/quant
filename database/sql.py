@@ -40,6 +40,6 @@ def download_sql(table):
     sql = '''
         SELECT *
         FROM %s as u 
-        WHERE u.date>'2019-03-01' AND u.date<'2019-04-01';
+        WHERE u.date>'2019-03-01' AND u.date<'2020-04-01';
         '''%table
     return sql

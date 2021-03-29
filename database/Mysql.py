@@ -44,8 +44,10 @@ class MysqlConnector:
         # 下面为将获取的数据转化为dataframe格式
         columnDes = self.__myCursor.description  # 获取连接对象的描述信息
         columnNames = [columnDes[i][0] for i in range(len(columnDes))]  # 获取列名
-        df = pd.DataFrame([list(i) for i in data], columns=columnNames)  # 得到的data为二维元组，逐行取出，转化为列表，再转化为df
-        return df
+        result = pd.DataFrame([list(i) for i in data], columns=columnNames)  # 得到的data为二维元组，逐行取出，转化为列表，再转化为df
+        result = result.apply(pd.to_numeric, axis=0, errors='ignore')
+        result['date'] = pd.to_datetime(result['date'])
+        return result
 
 #
 # sql = "SELECT * FROM score" # SQL语句

@@ -13,4 +13,4 @@ CREATE TABLE 'testdatabase'.'new_table' (
   'new_tablecol' DECIMAL(15,10) NULL,
   PRIMARY KEY ('date'));
 
-
+$sql = "insert into weixin_user(wx_id, wx_name, wx_state, wx_info, wx_lasttime) values ('$wx_id', '$wx_name', '$wx_state', '$wx_info', NOW()) ON DUPLICATE KEY UPDATE wx_name='$wx_name', wx_state = '$wx_state', wx_info = '$wx_info', wx_lasttime = NOW();";
