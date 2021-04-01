@@ -12,6 +12,7 @@ def create_sql(db, new_table):
         adjustflag INT NULL,
         turn DECIMAL(15,10) NULL,
         new_tablecol DECIMAL(15,10) NULL,
+        isST INT,
         PRIMARY KEY (date)) ENGINE = InnoDB DEFAULT CHARSET=utf8;
         ''' % (db, new_table)
     return sql
@@ -20,7 +21,7 @@ def create_sql(db, new_table):
 def upload_sql(table, value):
     sql = '''
         INSERT INTO %s 
-        VALUES ('%s','%s',%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        VALUES ('%s','%s',%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
         ON DUPLICATE KEY UPDATE code = '%s', 
                                 open = %s,
                                 high = %s,
@@ -30,10 +31,11 @@ def upload_sql(table, value):
                                 amount = %s,
                                 adjustflag = %s,
                                 turn = %s,
-                                new_tablecol = %s;
+                                new_tablecol = %s,
+                                isST = %s;
         ''' % (table, value[0], value[1], value[2], value[3], value[4], value[5], value[6], value[7],
-                             value[8], value[9], value[10], value[1], value[2], value[3], value[4], value[5], value[6], value[7],
-                             value[8], value[9], value[10])
+                             value[8], value[9], value[10], value[11], value[1], value[2], value[3], value[4], value[5], value[6], value[7],
+                             value[8], value[9], value[10], value[11])
     return sql
 
 def download_sql(table):

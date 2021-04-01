@@ -23,11 +23,12 @@ class MysqlConnector:
 
     def createTable(self, new_table, db="stock_data_day",):
         #todo:try-except
-        self.__myCursor.execute(create_sql(new_table, db))
+        self.__myCursor.execute(create_sql(db, new_table))
 
     def uploadData(self, dic, table, db="stock_data_day"):
         self.__myCursor.execute("USE %s;"%db)
         for value in dic.values:
+            print(upload_sql(table, value))
             self.__myCursor.execute(upload_sql(table, value))
             self.__myConnection.commit()
 
