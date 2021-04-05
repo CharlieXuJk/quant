@@ -3,6 +3,8 @@ import pandas as pd
 
 # 创建策略类
 class SmaCross(bt.Strategy):
+    self.buy_sig = false
+    self.sell_sig = false
     # 日志函数
     def log(self, txt, dt=None):
         '''日志函数'''
@@ -55,3 +57,9 @@ class SmaCross(bt.Strategy):
             exectype=bt.Order.Limit,
             price=uppertradinglimit
         )
+
+    def next(self):
+        if self.buy_sig:
+            myBuy()
+        if self.sell_sig:
+            mySell()
