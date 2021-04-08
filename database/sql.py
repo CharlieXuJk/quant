@@ -19,6 +19,7 @@ def create_sql(db, new_table):
 
 
 def upload_sql(table, value):
+    value = ["NULL" if (str(element)=="nan")or(str(element)=="NaN") else element for element in value]
     sql = '''
         INSERT INTO %s 
         VALUES ('%s','%s',%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)

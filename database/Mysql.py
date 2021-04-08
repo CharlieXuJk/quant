@@ -28,7 +28,6 @@ class MysqlConnector:
     def uploadData(self, dic, table, db="stock_data_day"):
         self.__myCursor.execute("USE %s;"%db)
         for value in dic.values:
-            print(upload_sql(table, value))
             self.__myCursor.execute(upload_sql(table, value))
             self.__myConnection.commit()
 
