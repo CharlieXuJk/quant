@@ -15,10 +15,12 @@ if __name__ == "__main__":
     #print(profitability_info)
 
     db = Mysql.MysqlConnector(host="1.15.90.134", user="gtrepublic", passwd="123", auth_plugin="mysql_native_password")
-    db.createTable("sh000001")
+    #db.createTable("sh000001")
     db.uploadData(sh000001, "sh000001")
-    pdd = db.downloadData("sh000001")
-    print(pdd.head())
+    pdd = db.downloadData("sb000001")
+    if pdd.index.size != 0:
+        print(pdd.head())
+    del(bao)
     #
     #
     # # 创建策略类

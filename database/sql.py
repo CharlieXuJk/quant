@@ -46,3 +46,8 @@ def download_sql(table):
         WHERE u.date>'2019-03-01' AND u.date<'2020-04-01';
         '''%table
     return sql
+
+def select_sql():
+    sql = '''
+        SELECT *
+        FROM'''

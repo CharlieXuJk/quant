@@ -120,7 +120,7 @@ data = bt.feeds.PandasData(
 cerebro.adddata(data)  # 将行情数据对象注入引擎
 cerebro.addstrategy(SmaCross)  # 将策略注入引擎
 
-cerebro.broker.setcash(100000.0)  # 设置初始资金
+cerebro.broker.setcash(10000000.0)  # 设置初始资金
 cerebro.broker.setcommission(0.001)  # 佣金费率
 # 固定滑点，也可用cerebro.broker.set_slippage_perc()设置百分比滑点
 cerebro.broker.set_slippage_fixed(0.05)

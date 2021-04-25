@@ -33,7 +33,12 @@ class MysqlConnector:
 
     def downloadData(self, table, db="stock_data_day"):
         self.__myCursor.execute("USE %s;"%db)
-        self.__myCursor.execute(download_sql(table))  # 执行SQL语句
+        try:
+            self.__myCursor.execute(download_sql(table))  # 执行SQL语句
+        except mysql.connector.errors.ProgrammingError as e:
+            print(e.args)
+            return pd.DataFrame()
+
         """
         使用fetchall函数以元组形式返回所有查询结果并打印出来
         fetchone()返回第一行，fetchmany(n)返回前n行
