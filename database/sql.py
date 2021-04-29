@@ -22,7 +22,7 @@ def upload_sql(table, value):
     value = ["NULL" if (str(element)=="nan")or(str(element)=="NaN") else element for element in value]
     sql = '''
         INSERT INTO %s 
-        VALUES ('%s','%s',%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        VALUES ('%s','%s',%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)    
         ON DUPLICATE KEY UPDATE code = '%s', 
                                 open = %s,
                                 high = %s,
@@ -46,6 +46,16 @@ def download_sql(table):
         WHERE u.date>'2019-03-01' AND u.date<'2020-04-01';
         '''%table
     return sql
+
+def get_lastday_sql(table):
+    sql = '''
+        select MAX(date) as date,code,open,high,low,close,volume,amount,adjustflag,turn,new_tablecol,isST
+        FROM %s
+        GROUP BY code
+        '''%table
+    print(sql)
+    return sql
+
 
 def select_sql():
     sql = '''

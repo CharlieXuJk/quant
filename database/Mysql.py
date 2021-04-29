@@ -38,7 +38,6 @@ class MysqlConnector:
         except mysql.connector.errors.ProgrammingError as e:
             print(e.args)
             return pd.DataFrame()
-
         """
         使用fetchall函数以元组形式返回所有查询结果并打印出来
         fetchone()返回第一行，fetchmany(n)返回前n行
@@ -53,6 +52,20 @@ class MysqlConnector:
         result = result.apply(pd.to_numeric, axis=0, errors='ignore')
         result['date'] = pd.to_datetime(result['date'])
         return result
+
+    def downloadLastDayData(self, table, db="stock_data_day"):
+        self.__myCursor.execute("USE %s;"%db)
+        self.__myCursor.execute(get_lastday_sql(table))
+
+        data = self.__myCursor.fetchall()
+        print(data)
+        columnDes = self.__myCursor.description  # 获取连接对象的描述信息
+        columnNames = [columnDes[i][0] for i in range(len(columnDes))]  # 获取列名
+        result = pd.DataFrame([list(i) for i in data], columns=columnNames)  # 得到的data为二维元组，逐行取出，转化为列表，再转化为df
+        result = result.apply(pd.to_numeric, axis=0, errors='ignore')
+        result['date'] = pd.to_datetime(result['date'])
+        return result
+
 
 #
 # sql = "SELECT * FROM score" # SQL语句
